@@ -1,0 +1,114 @@
+body {
+  font-family: "system-ui", "-apple-system", "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif;
+  line-height: 1.6;
+  min-height: 100vh;
+  margin: 0;
+  background-attachment: fixed;
+}
+
+.container {
+  padding: 20px;
+}
+
+.paper-count-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 40px;
+}
+
+.question-container {
+  background-color: var(--bg-secondary);
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05), 0 4px 12px rgba(0, 0, 0, 0.03);
+  padding: 25px;
+  margin-bottom: 25px;
+  transition: all 0.3s ease;
+}
+
+.question-container:hover {
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+  transform: translateY(-5px);
+}
+
+.question-label {
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+  font-size: 18px;
+}
+
+/* Updated Option Layout with Minimum Dimensions */
+.option-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  gap: 15px; /* Provides consistent spacing between label and input */
+}
+
+.option-label {
+  color: var(--text-secondary);
+  font-weight: 500;
+  white-space: nowrap; /* Prevents label from wrapping */
+  min-width: 100px; /* Ensures label has a consistent minimum width */
+  vertical-align: top;
+}
+
+.option-input {
+  flex-grow: 1;
+  /* min-width: 250px; Prevents input from becoming too narrow */
+  min-height: 40px; /* Ensures a minimum height */
+  width: 800px; /* Prevents input from becoming too wide on large screens */
+  padding: 10px 15px;
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  background-color: #f9fafb;
+}
+
+.option-input:focus {
+  border-color: var(--accent-primary);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+.question-input {
+  width: 100%;
+  min-width: 300px; /* Ensures minimum width for question input */
+  min-height: 120px;
+  max-width: 800px; /* Prevents becoming too wide */
+  padding: 12px 15px;
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 16px;
+  resize: vertical;
+  transition: all 0.3s ease;
+  background-color: #f9fafb;
+}
+
+.question-input:focus {
+  border-color: var(--accent-primary);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+/* Responsive Design Adjustments */
+@media (max-width: 768px) {
+  .option-container {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .option-label {
+    min-width: auto; /* Allows label to adapt on smaller screens */
+  }
+
+  .option-input {
+    min-width: 100%; /* Full width on small screens */
+  }
+}
+
+/* Rest of the previous CSS remains the same */
